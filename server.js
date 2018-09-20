@@ -5,7 +5,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 8080;
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const passport = require("passport");
 const flash = require("connect-flash");
 const morgan = require("morgan");
@@ -20,7 +20,7 @@ const session = require("express-session");
 // set db
 require("./config/database.js");
 
-// require('./config/passport')(passport); // pass passport for configuration
+require("./config/passport")(passport); // pass passport for configuration
 
 // set up our express application
 app.use(morgan("dev")); // log every request to the console
